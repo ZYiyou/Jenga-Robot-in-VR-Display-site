@@ -5,7 +5,7 @@
 
 # Website name (set in params.yaml under hugoblox.branding.name)
 title: ''
-baseURL: 'https://example.com/' # Website URL
+baseURL: 'https://zyiyou.github.io/Jenga-Robot-in-VR-Display-site/' # Website URL
 
 ############################
 ## PAGE OPTIONS
