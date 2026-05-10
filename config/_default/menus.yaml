@@ -1,22 +1,31 @@
-# Navigation Links
-#   The weight parameter defines the order that the links will appear in.
-
 main:
   - name: Home
     url: /
     weight: 10
-  - name: Documentation
-    url: docs/
+  - name: Project
+    url: /project/
     weight: 20
-  - name: Blog
-    url: blog/
+  - name: Architecture
+    url: /architecture/
     weight: 30
-  - name: Showcase
-    url: showcase/
+  - name: Demo
+    url: /demo/
     weight: 40
-  - name: Community
-    url: community/
+  - name: Engineering Challenges
+    url: /challenges/
     weight: 50
+  - name: Testing & Reflection
+    url: /testing/
+    weight: 60
+  - name: Team
+    url: /team/
+    weight: 70
+  - name: Slides
+    url: /slides/
+    weight: 80
+  - name: Reports
+    url: /reports/
+    weight: 90
 
 sidebar:
   - identifier: more
