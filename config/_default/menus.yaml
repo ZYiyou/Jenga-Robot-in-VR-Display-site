@@ -15,7 +15,7 @@ main:
     url: /challenges/
     weight: 50
   - name: Testing & Reflection
-    url: /testing/
+    url: /Testing/
     weight: 60
   - name: Team
     url: /team/
@@ -29,15 +29,15 @@ main:
 
 sidebar:
   - identifier: more
-    name: Still need help?
+    name: Need More?
     params:
       type: separator
     weight: 1
   - identifier: community
-    name: "Community"
-    pageRef: "/community"
+    name: Community
+    pageRef: /community
     weight: 2
-  - identifier: hugoDocs
-    name: "Hugo Docs ↗"
-    url: "https://docs.hugoblox.com"
+  - identifier: projectRepo
+    name: Project Repository
+    url: https://github.com/ZYiyou/Jenga-Robot-in-VR-Display-site
     weight: 3
