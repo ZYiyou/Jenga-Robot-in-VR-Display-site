@@ -5,7 +5,7 @@ type: landing
 sections:
   - block: hero
     content:
-      title: Jenga Robot in VR
+      title: Jenga Bot in VR
       text: A Unity-based VR Jenga MVP built around legal block selection, shared robot execution, and physics-based tower resolution.
       primary_action:
         text: Explore the Project
@@ -31,7 +31,7 @@ sections:
     design:
       columns: '1'
 
-  - block: markdownRob
+  - block: markdown
     id: highlights
     content:
       title: Why It Matters
