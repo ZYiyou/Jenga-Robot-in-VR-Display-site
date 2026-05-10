@@ -40,9 +40,11 @@ This project is a University of Nottingham COMP2002 group effort focused on a Un
 - Heuristic algorithms for AI decision-making.
 
 ## Key Screenshots
-![VR Block Selection](assets/media/screenshots/vr-selection.png)
-![Robot Arm Execution](assets/media/screenshots/robot-execution.png)
+Screenshot placeholders:
+
+- VR block selection
+- Robot arm execution
 
 ## Links
 - [Source Code Repository](https://github.com/ZYiyou/Jenga-Robot-in-VR-Display-site)
-- [Final Report (PDF)](/uploads/final-report.pdf)
+- Final report PDF placeholder

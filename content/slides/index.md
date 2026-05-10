@@ -11,7 +11,9 @@ type: slides
 This presentation highlights the Jenga Bot in VR MVP, demonstrating engineered solutions to complex robotic manipulation challenges in immersive environments.
 
 ## Slides
-{{< figure src="assets/media/slides/final-presentation.pdf" title="Final Presentation Deck" link="/uploads/final-presentation.pdf" >}}
+Presentation deck placeholder.
+
+Add the final slide PDF here once the presentation export is available.
 
 ## Key Takeaways
 - Effective decomposition of robot manipulation stages.

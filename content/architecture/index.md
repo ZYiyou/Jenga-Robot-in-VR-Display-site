@@ -19,7 +19,9 @@ This section overviews the core subsystems behind the Jenga Bot in VR.
 - Auxiliary voice command pathway: MicrophoneRecorder -> DirectWhisperClient -> RobotCommandParser -> VoiceCommandRobotBridge -> RobotArmAIExecutor.
 
 ## Architecture Flow Diagram
-![Architecture Flow](assets/media/diagrams/architecture-flow.png)
+Architecture diagram placeholder.
+
+Add the final system diagram here once `assets/media/diagrams/architecture-flow.png` is available.
 
 ## Single Turn Flow
 A player selects a legal block using VR controllers -> GameManager validates and passes command to RobotArmAIExecutor -> Robot arm approaches and grips the block -> Tower state updated -> Tower stability assessed -> AI opponent determines next move.

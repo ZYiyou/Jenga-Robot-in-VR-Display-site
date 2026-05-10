@@ -7,11 +7,11 @@ type: page
 
 # Reports & Documentation
 
-- [Final Project Report (PDF)](/uploads/final-report.pdf)
-- [User Manual (PDF)](/uploads/user-manual.pdf)
-- [Software Manual (PDF)](/uploads/software-manual.pdf)
 - [GitHub Repository](https://github.com/ZYiyou/Jenga-Robot-in-VR-Display-site)
-- [Presentation Deck](/uploads/final-presentation.pdf)
-- [Demo Video](/uploads/demo-video.mp4)
+- Final Project Report (PDF) - placeholder
+- User Manual (PDF) - placeholder
+- Software Manual (PDF) - placeholder
+- Presentation Deck - placeholder
+- Demo Video - placeholder
 
 *Placeholders above should be replaced with actual files as they become available.*

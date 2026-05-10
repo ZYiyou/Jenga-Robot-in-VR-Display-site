@@ -8,7 +8,9 @@ type: page
 # Demo
 
 ## Demo Video
-{{< figure src="assets/media/video/demo-video-placeholder.mp4" title="Demo Video" >}}
+Demo video placeholder.
+
+Add the final prerecorded demo video once `assets/media/video/demo-video-placeholder.mp4` or a public embed link is available.
 
 ## Demo Walkthrough
 
@@ -19,10 +21,10 @@ type: page
 5. Tower stability is monitored, and collapse is resolved if necessary.
 
 ## Screenshots
-- Selection phase ![Selection](assets/media/screenshots/selection.png)
-- Extraction phase ![Extraction](assets/media/screenshots/extraction.png)
-- Placement phase ![Placement](assets/media/screenshots/placement.png)
-- Tower resolution ![Tower Resolution](assets/media/screenshots/tower-resolution.png)
+- Selection phase screenshot placeholder
+- Extraction phase screenshot placeholder
+- Placement phase screenshot placeholder
+- Tower resolution screenshot placeholder
 
 ## Notes
 A prerecorded demo video is provided above in case real-time interaction is unavailable.
