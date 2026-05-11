@@ -48,6 +48,15 @@ sections:
 
   - block: markdown
     content:
+      title: System Feedback and Validation
+      subtitle: Stability Resolution Evidence
+      text: |
+        <div class="gif-showcase">
+          {{< gif-card src="/uploads/gifs/stability-check.gif" title="Stability Check" label="System Feedback" desc="After each move, the system checks whether the tower remains stable and updates the game state." alt="Post-move tower stability validation and state update feedback loop" >}}
+        </div>
+
+  - block: markdown
+    content:
       title: Team Collaboration
       subtitle: Delivery Process
       text: |

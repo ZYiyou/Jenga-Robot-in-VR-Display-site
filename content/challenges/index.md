@@ -32,4 +32,13 @@ sections:
         The project deliberately favors controlled interaction over fully unconstrained physics realism. During extraction and placement, the robot executor can temporarily adjust friction, gravity, and collider behavior so the system remains playable and demonstrable.
 
         This is a practical engineering tradeoff: the game still uses physics for tower outcomes, but the manipulation pipeline adds safeguards where raw rigidbody behavior would make the demo unreliable.
+
+  - block: markdown
+    content:
+      title: Extraction Risk Example
+      subtitle: Sensitive Action in the Loop
+      text: |
+        <div class="gif-showcase">
+          {{< gif-card src="/uploads/gifs/block-extraction.gif" title="Block Extraction" label="Jenga Action" desc="The robot carefully pulls the selected block out of the tower while maintaining the game flow." alt="High-risk block extraction step showing precision robotic movement" >}}
+        </div>
 ---

@@ -1,0 +1,29 @@
+{{- $src := .Get "src" | default "" -}}
+{{- $title := .Get "title" | default "GIF Showcase" -}}
+{{- $label := .Get "label" | default "Showcase" -}}
+{{- $desc := .Get "desc" | default "" -}}
+{{- $alt := .Get "alt" | default (printf "%s GIF showcase" $title) -}}
+{{- $showPlaceholder := eq (.Get "placeholder") "true" -}}
+{{- $cleanPath := strings.TrimPrefix "/" $src -}}
+{{- $staticPath := printf "static/%s" $cleanPath -}}
+{{- $assetExists := and (ne $src "") (fileExists $staticPath) -}}
+
+<article class="gif-card">
+  <div class="gif-card-media">
+    {{- if and (not $showPlaceholder) $assetExists -}}
+      <img src="{{ $src | relURL }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+    {{- else -}}
+      <div class="gif-placeholder" role="img" aria-label="{{ $alt }}">
+        <strong>{{ $title }}</strong>
+        <span>GIF coming soon</span>
+      </div>
+    {{- end -}}
+  </div>
+  <div class="gif-card-content">
+    <span class="gif-card-badge">{{ $label }}</span>
+    <h3>{{ $title }}</h3>
+    {{- with $desc }}
+      <p>{{ . }}</p>
+    {{- end }}
+  </div>
+</article>

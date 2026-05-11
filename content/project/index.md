@@ -55,6 +55,17 @@ sections:
 
   - block: markdown
     content:
+      title: Interaction Methods
+      subtitle: Player Input and System Response
+      text: |
+        <div class="gif-showcase gif-showcase-grid">
+          {{< gif-card src="/uploads/gifs/vr-ray-selection.gif" title="VR Ray Selection" label="Player Input" desc="The player points at the tower with a VR ray, and the system highlights valid blocks for selection." alt="VR ray selecting valid Jenga blocks with highlight feedback" >}}
+          {{< gif-card src="/uploads/gifs/voice-command-input.gif" title="Voice Command Input" label="Alternative Input" desc="Voice commands provide another way to interact with the game and support hands-free control." alt="Voice command transcription driving block interaction in VR Jenga" >}}
+          {{< gif-card src="/uploads/gifs/ai-turn.gif" title="AI Turn" label="Opponent Move" desc="The AI opponent selects a move and the robot executes it as part of the turn-based gameplay." alt="AI selecting and executing a robotic move during its turn" >}}
+        </div>
+
+  - block: markdown
+    content:
       title: Implemented Features
       subtitle: Object Responsibilities
       text: |

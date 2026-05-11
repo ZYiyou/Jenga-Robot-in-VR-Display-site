@@ -52,6 +52,35 @@ sections:
         padding: ['0', '0', '1rem', '0']
 
   - block: markdown
+    id: turn-flow-feature
+    content:
+      title: One Turn Flow
+      subtitle: Full Interaction
+      text: |
+        <div class="gif-showcase gif-feature-layout">
+          {{< gif-card
+            src="/uploads/gifs/full-turn-flow.gif"
+            title="One Turn Flow"
+            label="Full Interaction"
+            desc="From player selection to robot movement, this loop shows how one complete turn is handled in the VR Jenga system."
+            alt="Looped overview of one complete VR Jenga turn from selection to robot execution"
+          >}}
+          <div class="jenga-panel">
+            <strong>Why It Matters</strong>
+            <p>This single loop captures the full player-to-robot handoff and makes the system behavior easy to explain in presentations.</p>
+            <ul>
+              <li>Selection and confirmation are separated</li>
+              <li>Robot motion follows staged execution</li>
+              <li>Turn ends with stability-aware feedback</li>
+            </ul>
+          </div>
+        </div>
+    design:
+      columns: "1"
+      spacing:
+        padding: ['0', '0', '1rem', '0']
+
+  - block: markdown
     id: quick-actions
     content:
       title: Quick Access
