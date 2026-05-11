@@ -25,25 +25,50 @@ sections:
       subtitle: Core Showcase Features
       text: |
         {{< cards >}}
-          {{< card title="VR Interaction" icon="cube-transparent" subtitle="Ray-based controller targeting with legal block filtering." >}}
-          {{< card title="Robot Arm Execution" icon="wrench-screwdriver" subtitle="Approach, grip, extract, place, and retreat stages." >}}
-          {{< card title="AI Opponent" icon="cpu-chip" subtitle="Heuristic turn logic operating under the same game rules." >}}
-          {{< card title="Game Flow" icon="arrows-right-left" subtitle="Synchronized turn loop with tower-state and collapse checks." >}}
+          {{< card title="Two-Stage VR Selection" icon="cube-transparent" subtitle="The player locks a legal target first, then confirms after the robot reaches pre-grip position." >}}
+          {{< card title="Shared Robot Pipeline" icon="wrench-screwdriver" subtitle="Player, AI, and voice-triggered moves reuse the same staged execution component." >}}
+          {{< card title="Top Placement Planning" icon="square-3-stack-3d" subtitle="Extracted blocks are routed toward legal top-layer slots instead of being simply discarded." >}}
+          {{< card title="Physics Resolution" icon="arrows-right-left" subtitle="After each move, the system waits for the tower to stabilize or collapse before switching turns." >}}
         {{< /cards >}}
 
   - block: markdown
     content:
-      title: Implemented Features
-      subtitle: System Components
+      title: Implemented Runtime Loop
+      subtitle: From Player Intent to Game Outcome
       text: |
-        - Legal block targeting enforced by gameplay rules.
-        - Gameplay coordination by `GameManager`.
-        - `RobotArmAIExecutor` for shared robotic control.
-        - Tower management with `JengaTowerManager` and `JengaTowerState`.
-        - Physics and stability monitoring via `TowerCollapseDetector`.
-        - Gripper control systems including `GripperBlockGrabber`.
-        - Heuristic AI for opponent move generation.
-        - Voice command pathway using `DirectWhisperClient` and `RobotCommandParser`.
+        {{% steps %}}
+        ### Select
+        `PlayerBlockSelector` raycasts from the VR controller, filters illegal blocks, and locks a target block for the turn.
+
+        ### Prepare
+        `GameManager` asks `RobotArmAIExecutor` to move the robot into a pre-grip pose without extracting yet.
+
+        ### Confirm
+        The player gives a second confirmation after preparation, reducing accidental execution.
+
+        ### Execute
+        `RobotArmAIExecutor` performs staged grip, extraction, top-placement, release, and retreat.
+
+        ### Resolve
+        `TowerCollapseDetector` monitors rigidbody motion and collapse heuristics before the turn passes to the next owner.
+        {{% /steps %}}
+
+  - block: markdown
+    content:
+      title: Implemented Features
+      subtitle: Object Responsibilities
+      text: |
+        - `GameManager`: coordinating gameplay phases, turn ownership, event subscriptions, and outcome flow.
+        - `PlayerBlockSelector`: handling VR ray targeting, hover feedback, legal block filtering, and target locking.
+        - `JengaMoveRules`: enforcing practical Jenga legality rules, including protected top-layer filtering.
+        - `RobotArmAIExecutor`: running the shared prepare, grip, extract, place, release, and retreat pipeline.
+        - `JengaTowerManager`: generating the tower and planning the next legal top-placement slot.
+        - `JengaTowerState`: tracking active blocks, removed blocks, returned blocks, layers, and metadata.
+        - `GripperBlockGrabber`: validating finger contact, holding blocks, detecting separation, and releasing safely.
+        - `RobotArmAI`: selecting AI targets with a weighted heuristic over legal candidate blocks.
+        - `TowerCollapseDetector`: resolving stability or collapse using velocity thresholds and ground-region heuristics.
+        - `DirectWhisperClient`: sending recorded speech for transcription in the auxiliary voice-command pathway.
+        - `RobotCommandParser`: converting transcribed commands into intent, layer, and horizontal-position data.
 
   - block: markdown
     content:

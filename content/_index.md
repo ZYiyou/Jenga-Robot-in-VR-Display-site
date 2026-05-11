@@ -57,11 +57,6 @@ sections:
       title: Quick Access
       subtitle: Presentation Links
       text: |
-        {{< button url="/project/" style="primary" size="lg" >}}View Project{{< /button >}}
-        {{< button url="/demo/" style="secondary" size="lg" >}}Watch Demo{{< /button >}}
-        {{< button url="/reports/" style="outline" size="lg" >}}Read Report{{< /button >}}
-        {{< button url="/slides/" style="ghost" size="lg" >}}View Slides{{< /button >}}
-
         {{< cards >}}
           {{< card url="/project/" title="View Project" icon="rocket-launch" subtitle="Scope, goals, and implemented system" >}}
           {{< card url="/demo/" title="Watch Demo" icon="play-circle" subtitle="Workflow walkthrough and media placeholders" >}}
