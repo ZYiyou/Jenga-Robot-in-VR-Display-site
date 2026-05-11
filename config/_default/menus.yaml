@@ -1,31 +1,22 @@
 main:
-  - name: Home
-    url: /
+  - name: Overview
+    url: /#overview
     weight: 10
-  - name: Project
-    url: /project/
+  - name: Game Flow
+    url: /#game-flow
     weight: 20
-  - name: Architecture
-    url: /architecture/
+  - name: Turn Details
+    url: /#turn-details
     weight: 30
-  - name: Demo
-    url: /demo/
+  - name: Voice Command
+    url: /#voice-command
     weight: 40
-  - name: Engineering Challenges
-    url: /challenges/
+  - name: Collapse Effect
+    url: /#collapse-effect
     weight: 50
-  - name: Testing & Reflection
-    url: /testing/
-    weight: 60
   - name: Team
-    url: /team/
-    weight: 70
-  - name: Slides
-    url: /slides/
-    weight: 80
-  - name: Reports
-    url: /reports/
-    weight: 90
+    url: /#team
+    weight: 60
 
 sidebar:
   - identifier: more

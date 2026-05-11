@@ -1,0 +1,27 @@
+{{- $src := .Get "src" | default "" -}}
+{{- $title := .Get "title" | default "Video Showcase" -}}
+{{- $label := .Get "label" | default "Showcase" -}}
+{{- $desc := .Get "desc" | default "Video coming soon" -}}
+{{- $alt := .Get "alt" | default (printf "%s video showcase" $title) -}}
+{{- $cleanPath := strings.TrimPrefix "/" $src -}}
+{{- $staticPath := printf "static/%s" $cleanPath -}}
+{{- $assetExists := and (ne $src "") (fileExists $staticPath) -}}
+
+<article class="gif-card video-card">
+  <div class="gif-card-media">
+    {{- if $assetExists -}}
+      <video controls preload="metadata" playsinline aria-label="{{ $alt }}">
+        <source src="{{ $src | relURL }}" type="video/mp4">
+      </video>
+    {{- else -}}
+      <div class="gif-placeholder" role="img" aria-label="{{ $alt }}">
+        <strong>{{ $title }}</strong>
+        <span>{{ $desc }}</span>
+      </div>
+    {{- end -}}
+  </div>
+  <div class="gif-card-content">
+    <span class="gif-card-badge">{{ $label }}</span>
+    <h3>{{ $title }}</h3>
+  </div>
+</article>
