@@ -1,4 +1,4 @@
----
+﻿---
 title: "Project Overview - Jenga Bot in VR"
 summary: "Complete project overview, MVP scope, features, tech stack, and links."
 date: 2026-05-11
@@ -59,9 +59,9 @@ sections:
       subtitle: Player Input and System Response
       text: |
         <div class="gif-showcase gif-showcase-grid">
-          {{< gif-card src="/uploads/gifs/vr-ray-selection.gif" title="VR Ray Selection" label="Player Input" desc="The player points at the tower with a VR ray, and the system highlights valid blocks for selection." alt="VR ray selecting valid Jenga blocks with highlight feedback" >}}
-          {{< gif-card src="/uploads/gifs/voice-command-input.gif" title="Voice Command Input" label="Alternative Input" desc="Voice commands provide another way to interact with the game and support hands-free control." alt="Voice command transcription driving block interaction in VR Jenga" >}}
-          {{< gif-card src="/uploads/gifs/ai-turn.gif" title="AI Turn" label="Opponent Move" desc="The AI opponent selects a move and the robot executes it as part of the turn-based gameplay." alt="AI selecting and executing a robotic move during its turn" >}}
+          {{< video-card src="/uploads/game-flow/select-and-grip.mp4" title="VR Ray Selection" label="Player Input" desc="The player points at the tower with a VR ray, and the system highlights valid blocks for selection." alt="VR ray selecting valid Jenga blocks with highlight feedback" >}}
+          {{< video-card src="/uploads/game-flow/voice-control-demo.mp4" title="Voice Command Input" label="Alternative Input" desc="Voice commands provide another way to interact with the game and support hands-free control." alt="Voice command transcription driving block interaction in VR Jenga" >}}
+          {{< video-card src="/uploads/game-flow/full-process.mp4" title="AI Turn" label="Opponent Move" desc="The AI opponent selects a move and the robot executes it as part of the turn-based gameplay." alt="AI selecting and executing a robotic move during its turn" >}}
         </div>
 
   - block: markdown
@@ -114,3 +114,4 @@ sections:
         - [Source Code Repository](https://github.com/ZYiyou/Jenga-Robot-in-VR-Display-site)
         - Final report PDF placeholder
 ---
+
