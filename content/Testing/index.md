@@ -1,4 +1,4 @@
----
+﻿---
 title: "Testing & Reflection - Jenga Bot in VR"
 summary: "Testing strategies, teamwork highlights, and project reflections."
 date: 2026-05-11
@@ -52,7 +52,7 @@ sections:
       subtitle: Stability Resolution Evidence
       text: |
         <div class="gif-showcase">
-          {{< gif-card src="/uploads/gifs/stability-check.gif" title="Stability Check" label="System Feedback" desc="After each move, the system checks whether the tower remains stable and updates the game state." alt="Post-move tower stability validation and state update feedback loop" >}}
+          {{< video-card src="/uploads/game-flow/full-process.mp4" title="Stability Check" label="System Feedback" desc="After each move, the system checks whether the tower remains stable and updates the game state." alt="Post-move tower stability validation and state update feedback loop" >}}
         </div>
 
   - block: markdown
@@ -76,3 +76,4 @@ sections:
           {{< card title="Scope Control Matters" icon="shield-check" subtitle="Keeping voice auxiliary preserved time for the central VR-plus-robot Jenga loop." >}}
         {{< /cards >}}
 ---
+

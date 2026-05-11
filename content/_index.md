@@ -1,4 +1,4 @@
----
+﻿---
 title: Home
 type: landing
 
@@ -24,6 +24,31 @@ sections:
     id: hero-visual
     content:
       text: |
+        <script>
+          (function () {
+            var base = document.documentElement.getAttribute('data-hbb-relurl') || '/';
+            if (!base.startsWith('/')) base = '/' + base;
+            if (!base.endsWith('/')) base += '/';
+            var cssHref = base + 'css/jenga-tech.css';
+            var jsSrc = base + 'js/game-flow-control-room.js';
+
+            if (!document.querySelector('link[data-jenga-tech-css]')) {
+              var link = document.createElement('link');
+              link.rel = 'stylesheet';
+              link.href = cssHref;
+              link.setAttribute('data-jenga-tech-css', '1');
+              document.head.appendChild(link);
+            }
+
+            if (!document.querySelector('script[data-game-flow-js]')) {
+              var script = document.createElement('script');
+              script.src = jsSrc;
+              script.defer = true;
+              script.setAttribute('data-game-flow-js', '1');
+              document.head.appendChild(script);
+            }
+          })();
+        </script>
         <div class="jenga-visual">
           <div class="jenga-visual-grid">
             <div class="jenga-panel hero-scene-panel">
@@ -44,7 +69,6 @@ sections:
               <div class="anchor-cta-grid">
                 <a href="#overview">Project Overview</a>
                 <a href="#game-flow">Game Flow</a>
-                <a href="#turn-details">Turn Details</a>
                 <a href="#voice-command">Voice Command Demo</a>
                 <a href="#collapse-effect">Tower Collapse Effect</a>
                 <a href="#team">Meet Our Team</a>
@@ -75,48 +99,45 @@ sections:
   - block: markdown
     id: game-flow
     content:
-      title: Game Flow Overview
-      subtitle: End-To-End Gameplay Pipeline
+      title: Game Flow Control Room
+      subtitle: Explore the key interaction and robot action videos from Jenga Bot in VR.
       text: |
-        <div class="flow-grid">
-          <article class="flow-card"><span class="flow-index">01</span><h3>Start Game</h3><p>Initialize scene, players, and game manager state.</p><span class="flow-tag">System</span></article>
-          <article class="flow-card"><span class="flow-index">02</span><h3>Player Turn</h3><p>Activate player interaction mode for the current turn.</p><span class="flow-tag">Input</span></article>
-          <article class="flow-card"><span class="flow-index">03</span><h3>Select or Voice Command</h3><p>Player chooses a block by VR ray or spoken command.</p><span class="flow-tag">Input</span></article>
-          <article class="flow-card"><span class="flow-index">04</span><h3>Validate Block</h3><p>Game logic checks legal and protected block rules.</p><span class="flow-tag">System</span></article>
-          <article class="flow-card"><span class="flow-index">05</span><h3>Robot Executes Move</h3><p>Robot arm performs grasp, extract, move, and place actions.</p><span class="flow-tag">Robot</span></article>
-          <article class="flow-card"><span class="flow-index">06</span><h3>Stability Check</h3><p>Physics and rule checks determine whether the tower stays stable.</p><span class="flow-tag">Feedback</span></article>
-          <article class="flow-card"><span class="flow-index">07</span><h3>AI Turn</h3><p>Control shifts to AI, which repeats the same execution pipeline.</p><span class="flow-tag">AI</span></article>
-          <article class="flow-card"><span class="flow-index">08</span><h3>Game Over if Tower Collapses</h3><p>If instability is critical, the game ends with collapse feedback.</p><span class="flow-tag">Feedback</span></article>
-        </div>
-    design:
-      columns: "1"
-
-  - block: markdown
-    id: turn-details
-    content:
-      title: Turn Details
-      subtitle: Detailed Breakdown Of One Player Turn
-      text: |
-        <div class="turn-steps">
-          <article class="turn-step-card"><h3>1. Player chooses a control method</h3><p>Choose between VR ray selection and voice command input.</p></article>
-          <div class="gif-showcase-grid">
-            {{< gif-card src="/uploads/gifs/vr-ray-selection.gif" title="VR Ray Selection" label="Input" desc="Player points to and selects a candidate block using VR ray interaction." alt="VR ray selecting a Jenga block" >}}
+        <p class="control-room-mini-label">Interactive Demo Area</p>
+        <p>Click each stage to preview the main gameplay actions, including player selection, robot movement, voice control, full turn flow, and tower collapse feedback.</p>
+        <div class="control-room" id="game-flow-control-room">
+          <div class="control-steps" role="tablist" aria-label="Game flow steps">
+            <button class="control-step-btn is-active" type="button" role="tab" aria-selected="true" aria-pressed="true" aria-controls="control-room-display" aria-label="Step 01 Full Process" data-step="01" data-icon="&#9679;" data-title="Full Process" data-desc="A complete gameplay sequence showing how selection, robot movement, placement, and game feedback work together." data-video="/uploads/game-flow/full-process.mp4">
+              <span class="step-code">01</span><span class="step-name">Full Process</span>
+            </button>
+            <button class="control-step-btn" type="button" role="tab" aria-selected="false" aria-pressed="false" aria-controls="control-room-display" aria-label="Step 02 Select and Grip" data-step="02" data-icon="&#9654;" data-title="Select &amp; Grip" data-desc="The player selects a Jenga block, and the robot arm approaches and grips the selected block." data-video="/uploads/game-flow/select-and-grip.mp4">
+              <span class="step-code">02</span><span class="step-name">Select &amp; Grip</span>
+            </button>
+            <button class="control-step-btn" type="button" role="tab" aria-selected="false" aria-pressed="false" aria-controls="control-room-display" aria-label="Step 03 Place to Top" data-step="03" data-icon="&#9998;" data-title="Place to Top" data-desc="The robot arm moves the extracted block to the top of the tower and places it to complete the turn." data-video="/uploads/game-flow/place-to-top.mp4">
+              <span class="step-code">03</span><span class="step-name">Place to Top</span>
+            </button>
+            <button class="control-step-btn" type="button" role="tab" aria-selected="false" aria-pressed="false" aria-controls="control-room-display" aria-label="Step 04 Voice Control" data-step="04" data-icon="&#10003;" data-title="Voice Control" data-desc="Voice commands provide another way for the player to control the game alongside VR ray selection." data-video="/uploads/game-flow/voice-control-demo.mp4">
+              <span class="step-code">04</span><span class="step-name">Voice Control</span>
+            </button>
+            <button class="control-step-btn" type="button" role="tab" aria-selected="false" aria-pressed="false" aria-controls="control-room-display" aria-label="Step 05 Tower Collapse Effect" data-step="05" data-icon="&#9881;" data-title="Tower Collapse Effect" data-desc="The tower collapse uses physics-based behaviour, so blocks fall naturally when the tower becomes unstable." data-video="/uploads/game-flow/tower-collapse.mp4">
+              <span class="step-code">05</span><span class="step-name">Tower Collapse</span>
+            </button>
           </div>
 
-          <article class="turn-step-card"><h3>2. The selected block is checked</h3><p>Valid blocks are highlighted while invalid or protected blocks are rejected.</p></article>
-
-          <article class="turn-step-card"><h3>3. The selection is locked</h3><p>The confirmed action is sent to the game manager for execution.</p></article>
-
-          <article class="turn-step-card"><h3>4. Robot arm movement sequence</h3><p>Approach, grip, extract, move to top, place, release, and retreat.</p></article>
-          <div class="gif-showcase-grid">
-            {{< gif-card src="/uploads/gifs/robot-grasp.gif" title="Robot Grasp" label="Robot" desc="Robot arm aligns and grips the selected block." alt="Robot arm grasping the selected Jenga block" >}}
-            {{< gif-card src="/uploads/gifs/block-extraction.gif" title="Block Extraction" label="Robot" desc="The selected block is extracted from the tower with controlled motion." alt="Robot arm extracting a Jenga block" >}}
-            {{< gif-card src="/uploads/gifs/block-placement.gif" title="Block Placement" label="Robot" desc="The block is moved to the top layer and placed for turn completion." alt="Robot arm placing a Jenga block on top" >}}
-          </div>
-
-          <article class="turn-step-card"><h3>5. Game state update</h3><p>Run stability check, update turn state, then switch to AI turn or trigger game over.</p></article>
-          <div class="gif-showcase-grid">
-            {{< gif-card src="/uploads/gifs/stability-check.gif" title="Stability Check" label="Feedback" desc="The system evaluates tower stability to determine next state." alt="Tower stability check after block placement" >}}
+          <div class="control-display-panel" id="control-room-display">
+            <div class="control-display-head">
+              <span class="control-display-label">Gameplay Stage Preview</span>
+              <h3 id="control-room-panel-title">Step 01 · Full Process</h3>
+              <p id="control-room-panel-desc">A complete gameplay sequence showing how selection, robot movement, placement, and game feedback work together.</p>
+            </div>
+            <div class="control-display-shell">
+              <video id="control-room-video" controls muted loop playsinline preload="metadata" aria-label="Game flow video for Full Process">
+                <source id="control-room-video-source" src="/uploads/game-flow/full-process.mp4" type="video/mp4">
+              </video>
+              <div class="control-video-placeholder" id="control-room-placeholder" role="status" aria-live="polite">
+                <strong>Video coming soon</strong>
+                <span>Step 01 · Full Process</span>
+              </div>
+            </div>
           </div>
         </div>
     design:
@@ -137,7 +158,7 @@ sections:
               <span class="flow-tag">Player Interaction</span>
             </div>
           </div>
-          {{< video-card src="/uploads/voice-command-demo.mp4" title="Voice Command Demo" label="Media Showcase" desc="Voice command demo video coming soon" alt="Voice command interaction demo video" >}}
+          {{< video-card src="/uploads/game-flow/voice-control-demo.mp4" title="Voice Command Demo" label="Media Showcase" desc="Voice command demo video coming soon" alt="Voice command interaction demo video" >}}
         </div>
     design:
       columns: "1"
@@ -157,7 +178,7 @@ sections:
             {{< /cards >}}
           </div>
           <div>
-            {{< gif-card src="/uploads/gifs/tower-collapse-effect.gif" title="Tower Collapse Effect" label="Physics" desc="Tower collapse effect demo coming soon" alt="Tower collapse effect with physical gravity" >}}
+            {{< video-card src="/uploads/game-flow/tower-collapse.mp4" title="Tower Collapse Effect" label="Physics" desc="Tower collapse effect demo video" alt="Tower collapse effect with physical gravity" >}}
           </div>
         </div>
     design:
@@ -193,3 +214,5 @@ sections:
       spacing:
         padding: ['1rem', '0', '3rem', '0']
 ---
+
+

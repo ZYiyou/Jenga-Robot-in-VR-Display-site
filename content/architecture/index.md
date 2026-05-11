@@ -1,4 +1,4 @@
----
+﻿---
 title: "System Architecture - Jenga Bot in VR"
 summary: "Technical subsystem overview and architecture flow for VR Jenga MVP."
 date: 2026-05-11
@@ -69,9 +69,9 @@ sections:
       subtitle: Module-Connected Visual Loop
       text: |
         <div class="gif-showcase gif-showcase-grid">
-          {{< gif-card src="/uploads/gifs/voice-command-input.gif" title="Voice Command Input" label="Speech Input" desc="Speech Input passes parsed intent into GameManager before robot execution begins." alt="Voice input path feeding parsed commands into gameplay pipeline" >}}
-          {{< gif-card src="/uploads/gifs/ai-turn.gif" title="AI Turn" label="GameManager + Robot Arm Control" desc="GameManager assigns the AI turn and the shared Robot Arm Control pipeline executes the selected move." alt="AI turn execution linked to game manager and robot control modules" >}}
-          {{< gif-card src="/uploads/gifs/stability-check.gif" title="Stability Check" label="UI Feedback" desc="UI Feedback and tower-state updates reflect whether the move ended stable or triggered collapse handling." alt="Tower stability check results updating UI and game state" >}}
+          {{< video-card src="/uploads/game-flow/voice-control-demo.mp4" title="Voice Command Input" label="Speech Input" desc="Speech Input passes parsed intent into GameManager before robot execution begins." alt="Voice input path feeding parsed commands into gameplay pipeline" >}}
+          {{< video-card src="/uploads/game-flow/full-process.mp4" title="AI Turn" label="GameManager + Robot Arm Control" desc="GameManager assigns the AI turn and the shared Robot Arm Control pipeline executes the selected move." alt="AI turn execution linked to game manager and robot control modules" >}}
+          {{< video-card src="/uploads/game-flow/full-process.mp4" title="Stability Check" label="UI Feedback" desc="UI Feedback and tower-state updates reflect whether the move ended stable or triggered collapse handling." alt="Tower stability check results updating UI and game state" >}}
         </div>
 
   - block: markdown
@@ -94,3 +94,4 @@ sections:
         > [!NOTE]
         > Add final diagram image to `assets/media/diagrams/architecture-flow.png` and embed it here when available.
 ---
+

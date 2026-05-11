@@ -5,18 +5,15 @@ main:
   - name: Game Flow
     url: /#game-flow
     weight: 20
-  - name: Turn Details
-    url: /#turn-details
-    weight: 30
   - name: Voice Command
     url: /#voice-command
-    weight: 40
+    weight: 30
   - name: Collapse Effect
     url: /#collapse-effect
-    weight: 50
+    weight: 40
   - name: Team
     url: /#team
-    weight: 60
+    weight: 50
 
 sidebar:
   - identifier: more

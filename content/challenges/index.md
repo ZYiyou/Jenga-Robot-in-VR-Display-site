@@ -1,4 +1,4 @@
----
+﻿---
 title: "Engineering Challenges - Jenga Bot in VR"
 summary: "Summary of key engineering challenges and solutions."
 date: 2026-05-11
@@ -39,6 +39,7 @@ sections:
       subtitle: Sensitive Action in the Loop
       text: |
         <div class="gif-showcase">
-          {{< gif-card src="/uploads/gifs/block-extraction.gif" title="Block Extraction" label="Jenga Action" desc="The robot carefully pulls the selected block out of the tower while maintaining the game flow." alt="High-risk block extraction step showing precision robotic movement" >}}
+          {{< video-card src="/uploads/game-flow/select-and-grip.mp4" title="Block Extraction" label="Jenga Action" desc="The robot carefully pulls the selected block out of the tower while maintaining the game flow." alt="High-risk block extraction step showing precision robotic movement" >}}
         </div>
 ---
+
