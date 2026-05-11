@@ -1,0 +1,227 @@
+:root {
+  --jt-bg-0: #05070d;
+  --jt-bg-1: #0a1220;
+  --jt-bg-2: #0f1e33;
+  --jt-cyan: #45d6ff;
+  --jt-cyan-soft: rgba(69, 214, 255, 0.2);
+  --jt-wood: #c58a52;
+  --jt-wood-soft: rgba(197, 138, 82, 0.26);
+  --jt-ink: #dce7f7;
+  --jt-muted: #98acc5;
+  --jt-card: rgba(9, 17, 31, 0.82);
+  --jt-border: rgba(95, 128, 166, 0.3);
+}
+
+html,
+body {
+  background:
+    radial-gradient(circle at 15% -10%, rgba(69, 214, 255, 0.15), transparent 40%),
+    radial-gradient(circle at 92% 0%, rgba(197, 138, 82, 0.13), transparent 35%),
+    linear-gradient(180deg, var(--jt-bg-1), var(--jt-bg-0) 35%, #04060b 100%);
+  color: var(--jt-ink);
+}
+
+.site-header,
+header,
+nav {
+  backdrop-filter: blur(10px);
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: 0.01em;
+}
+
+main h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+main h2 {
+  font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+}
+
+main p,
+main li {
+  color: var(--jt-muted);
+}
+
+/* Hero polish */
+section:first-of-type {
+  position: relative;
+}
+
+section:first-of-type::before {
+  content: "";
+  position: absolute;
+  inset: 10% -5% auto -5%;
+  height: 65%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(69, 214, 255, 0.2), transparent 45%),
+    radial-gradient(circle at 80% 60%, rgba(197, 138, 82, 0.18), transparent 45%);
+  filter: blur(26px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+section:first-of-type > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Jenga concept visual block */
+.jenga-visual {
+  margin: 1.2rem auto 0;
+  max-width: 980px;
+  border: 1px solid var(--jt-border);
+  border-radius: 20px;
+  padding: 1rem;
+  background: linear-gradient(145deg, rgba(7, 14, 26, 0.85), rgba(8, 19, 35, 0.72));
+  box-shadow: 0 14px 48px rgba(0, 0, 0, 0.4);
+}
+
+.jenga-visual-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.jenga-panel {
+  border: 1px solid var(--jt-border);
+  border-radius: 14px;
+  padding: 1rem;
+  background: rgba(8, 17, 31, 0.66);
+}
+
+.tower-stack {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 0.6rem;
+}
+
+.tower-row {
+  display: grid;
+  gap: 0.4rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tower-block {
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 225, 190, 0.22);
+  background: linear-gradient(135deg, #a36f42, #d9aa73);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35);
+}
+
+.tower-row.offset {
+  transform: translateX(18px);
+}
+
+.signal-line {
+  margin-top: 0.75rem;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--jt-cyan), transparent);
+  animation: jtPulse 2.6s ease-in-out infinite;
+}
+
+@keyframes jtPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* Cards and blocks */
+.card,
+.hb-card,
+[class*="card"] a,
+[class*="card"] article {
+  border-radius: 14px;
+}
+
+.card,
+.hb-card,
+article {
+  background: var(--jt-card);
+  border: 1px solid var(--jt-border);
+}
+
+.card:hover,
+.hb-card:hover,
+article:hover {
+  transform: translateY(-5px);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  border-color: rgba(69, 214, 255, 0.46);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.36), 0 0 0 1px rgba(69, 214, 255, 0.2) inset;
+}
+
+/* Add a warm top edge to cards for Jenga accent */
+.card::before,
+.hb-card::before {
+  content: "";
+  display: block;
+  height: 4px;
+  border-radius: 14px 14px 0 0;
+  background: linear-gradient(90deg, #a46f42, #d9ad78, #a46f42);
+}
+
+/* Buttons */
+a[class*="btn"],
+.btn,
+button {
+  border-radius: 999px;
+  transition: all 220ms ease;
+}
+
+a[class*="btn"]:hover,
+.btn:hover,
+button:hover {
+  box-shadow: 0 0 0 1px var(--jt-cyan-soft), 0 8px 20px rgba(69, 214, 255, 0.16);
+}
+
+/* Markdown callouts */
+blockquote {
+  border-left: 4px solid var(--jt-wood);
+  background: rgba(197, 138, 82, 0.08);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+}
+
+/* Steps block polish */
+.steps,
+[class*="steps"] {
+  border: 1px solid var(--jt-border);
+  border-radius: 16px;
+  background: rgba(7, 16, 30, 0.72);
+  padding: 1rem;
+}
+
+/* Section rhythm */
+main section {
+  position: relative;
+}
+
+main section + section {
+  margin-top: 0.8rem;
+}
+
+main section + section::before {
+  content: "";
+  display: block;
+  width: min(140px, 26vw);
+  height: 6px;
+  margin: 0 auto 1.4rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(197, 138, 82, 0.7), rgba(69, 214, 255, 0.8));
+  opacity: 0.7;
+}
+
+@media (max-width: 920px) {
+  .jenga-visual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tower-row.offset {
+    transform: none;
+  }
+}

@@ -1,37 +1,59 @@
 ---
-title: "System Architecture — Jenga Bot in VR"
+title: "System Architecture - Jenga Bot in VR"
 summary: "Technical subsystem overview and architecture flow for VR Jenga MVP."
 date: 2026-05-11
-type: page
+type: landing
+
+sections:
+  - block: hero
+    content:
+      title: System Architecture
+      text: "A subsystem-level view of how VR input, robotic execution, tower logic, AI turns, and voice commands integrate into one gameplay loop."
+      primary_action:
+        text: View Project
+        url: /project/
+      secondary_action:
+        text: View Demo
+        url: /demo/
+
+  - block: markdown
+    content:
+      title: Subsystem Overview
+      subtitle: System Cards
+      text: |
+        {{< cards >}}
+          {{< card title="Game Manager" icon="squares-2x2" subtitle="Orchestrates turn lifecycle, legality checks, and outcome flow." >}}
+          {{< card title="VR Input" icon="hand-raised" subtitle="Controller ray selection and legal block targeting pipeline." >}}
+          {{< card title="Speech Input" icon="microphone" subtitle="MicrophoneRecorder -> DirectWhisperClient -> RobotCommandParser." >}}
+          {{< card title="Robot Arm Control" icon="wrench-screwdriver" subtitle="RobotArmAIExecutor executes staged extraction and top placement." >}}
+          {{< card title="UI Feedback" icon="chat-bubble-left-right" subtitle="Player-facing state and interaction feedback throughout turns." >}}
+          {{< card title="AI Turn" icon="cpu-chip" subtitle="Heuristic move planner integrated into the same execution pipeline." >}}
+        {{< /cards >}}
+
+  - block: markdown
+    content:
+      title: Single Turn Flow
+      subtitle: End-to-End Runtime Sequence
+      text: |
+        {{% steps %}}
+        ### Select
+        Player chooses a legal block with VR controllers.
+
+        ### Validate & Dispatch
+        `GameManager` checks legality and dispatches execution request.
+
+        ### Execute
+        `RobotArmAIExecutor` performs approach, grip, extraction, transport, and placement.
+
+        ### Resolve
+        Tower state updates and `TowerCollapseDetector` evaluates stability outcome.
+        {{% /steps %}}
+
+  - block: markdown
+    content:
+      title: Architecture Diagram
+      subtitle: Visual Asset Placeholder
+      text: |
+        > [!NOTE]
+        > Add final diagram image to `assets/media/diagrams/architecture-flow.png` and embed it here when available.
 ---
-
-# System Architecture
-
-This section overviews the core subsystems behind the Jenga Bot in VR.
-
-## Subsystem Overview
-- Player VR Input & Ray Selection handled by PlayerBlockSelector.
-- Gameplay coordination managed by GameManager.
-- Shared robotic execution pipeline via RobotArmAIExecutor.
-- Physical manipulation through GripperBlockGrabber and RobotGripperController.
-- Tower logic maintained by JengaTowerManager, JengaTowerState, and JengaMoveRules.
-- Stability monitored by TowerCollapseDetector.
-- Auxiliary voice command pathway: MicrophoneRecorder -> DirectWhisperClient -> RobotCommandParser -> VoiceCommandRobotBridge -> RobotArmAIExecutor.
-
-## Architecture Flow Diagram
-Architecture diagram placeholder.
-
-Add the final system diagram here once `assets/media/diagrams/architecture-flow.png` is available.
-
-## Single Turn Flow
-A player selects a legal block using VR controllers -> GameManager validates and passes command to RobotArmAIExecutor -> Robot arm approaches and grips the block -> Tower state updated -> Tower stability assessed -> AI opponent determines next move.
-
-## Robot Execution Stages
-1. Approach block
-2. Grip block
-3. Extract block
-4. Transport to top placement
-5. Place block
-6. Release and retreat
-
-Each stage is managed carefully to handle physics stability and execution failures.

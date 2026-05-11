@@ -1,39 +1,24 @@
 ---
-title: "Engineering Challenges — Jenga Bot in VR"
+title: "Engineering Challenges - Jenga Bot in VR"
 summary: "Summary of key engineering challenges and solutions."
 date: 2026-05-11
-type: page
+type: landing
+
+sections:
+  - block: hero
+    content:
+      title: Engineering Challenges
+      text: "Key technical constraints we faced and the concrete engineering decisions that made the MVP reliable and presentable."
+
+  - block: markdown
+    content:
+      title: Challenge Breakdown
+      subtitle: Problem -> Solution -> Impact
+      text: |
+        {{< cards >}}
+          {{< card title="Robot Execution" icon="wrench-screwdriver" subtitle="Hard: fragile manipulation needs staged control, not direct grab. Solution: discrete approach/grip/extract/place/release/retreat pipeline. Impact: reliable manipulation and recoverable failures." >}}
+          {{< card title="Physics Stability" icon="exclamation-triangle" subtitle="Hard: delayed collapse after movement. Solution: TowerCollapseDetector and post-placement checks. Impact: realistic physics consequences." >}}
+          {{< card title="System Integration" icon="circle-stack" subtitle="Hard: unify VR input, AI turns, rules, robot control, and outcomes. Solution: GameManager-centered orchestration. Impact: cleaner debugging and consistent gameplay loop." >}}
+          {{< card title="Scope Discipline" icon="shield-check" subtitle="Hard: avoid scope creep. Solution: prioritize stable end-to-end MVP. Impact: coherent and credible demo within course timeline." >}}
+        {{< /cards >}}
 ---
-
-# Engineering Challenges
-
-## Robot Execution Challenge
-**Why it was hard:** Precise manipulation with a fragile tower required a staged robot arm workflow rather than a simple grab.
-
-**Solution:** Decomposed operation into discrete approach, grip, extract, place, release, and retreat stages managed by RobotArmAIExecutor.
-
-**Impact:** Achieved reliable block manipulation and allowed detection and correction of partial failures.
-
-
-## Physics Challenge
-**Why it was hard:** Block extraction and placement unpredictably affect tower stability, with delayed collapse.
-
-**Solution:** Implemented TowerCollapseDetector to monitor post-placement stability and trigger resolution.
-
-**Impact:** Realistic gameplay that reflects physics-based consequences beyond immediate release.
-
-
-## Systems Integration Challenge
-**Why it was hard:** VR inputs, robotic control, tower rules, AI turns, and outcome resolution had to form a seamless gameplay loop.
-
-**Solution:** Centralized coordination through GameManager with clear subsystem boundaries.
-
-**Impact:** Consistent gameplay and easier debugging, boosting team productivity.
-
-
-## Scope Discipline Challenge
-**Why it was hard:** Broad feature ideas risked scope creep and unfinished implementations.
-
-**Solution:** Focused on a stable end-to-end MVP, consciously avoiding overclaiming or incomplete features.
-
-**Impact:** Delivered a cohesive, credible demo-ready system within the project timeframe.
